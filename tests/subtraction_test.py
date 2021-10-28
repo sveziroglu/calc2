@@ -1,5 +1,5 @@
 """Testing Addition"""
-from calc.operations.subtraction import Subtraction
+from calc.calculations.subtraction import Subtraction
 
 def test_subtraction():
     """testing calc result is -1"""
