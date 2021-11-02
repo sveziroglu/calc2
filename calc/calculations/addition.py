@@ -1,11 +1,13 @@
 """Addition Class"""
+import pprint
 
-class Addition:
+from calc.calculations.calculation import Calculation
 
-    # default constructor
-    def __init__(self,value_a, value_b):
-        self.value_a = value_a
-        self.value_b = value_b
+class Addition(Calculation):
 
     def getResult(self):
-        return self.value_a + self.value_b
+        sum_of_values = 0.0
+        pprint.pprint(self.values)
+        for value in self.values:
+            sum_of_values = value + sum_of_values
+        return sum_of_values
