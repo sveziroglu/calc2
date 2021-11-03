@@ -17,6 +17,7 @@ class Calculator:
     @staticmethod
     def clear_history():
         Calculator.history.clear()
+        return True
     @staticmethod
     def get_calculation(num):
         return Calculator.history[num]

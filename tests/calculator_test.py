@@ -26,3 +26,15 @@ def test_calculator_history_static_property(clear_history):
     """Testing the subtract method of the calc"""
     Calculator.add_numbers(1.0,2.0)
     assert len(Calculator.history) == 1
+
+def test_clear_history():
+    Calculator.add_numbers(1.0,2.0)
+    assert Calculator.clear_history() == True
+
+def test_get_calculation():
+    Calculator.add_numbers(1.0,2.0)
+    assert Calculator.get_calculation(0).getResult() == 3
+
+def test_get_calculation_last():
+    Calculator.add_numbers(1.0,2.0)
+    assert Calculator.get_calculation_last().getResult() == 3
