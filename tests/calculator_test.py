@@ -9,7 +9,7 @@ def test_calculator_add_static():
 
 def test_calculator_subtract():
     """Testing the subtract method of the calc"""
-    assert Calculator.subtract_numbers(1.0,2.0) == -1.0
+    assert Calculator.subtract_numbers(1.0,2.0) == -3.0
 
 def test_calculator_multiply():
     """Testing the subtract method of the calc"""

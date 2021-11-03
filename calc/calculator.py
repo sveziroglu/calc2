@@ -8,11 +8,16 @@ from calc.calculations.multiplication import Multiplication
 class Calculator:
     """ This is the Calculator class"""
     history = []
-
+    @staticmethod
+    def convert_args_to_list_float(values):
+        list_values_float = []
+        for item in values:
+            list_values_float.append(float(item))
+        return list_values_float
     @staticmethod
     def add_numbers(*args):
         """ adds two numbers"""
-        addition = Addition(args)
+        addition = Addition(Calculator.convert_args_to_list_float(args))
         Calculator.history.append(addition)
         return addition.getResult()
     @staticmethod
@@ -27,11 +32,11 @@ class Calculator:
     @staticmethod
     def subtract_numbers(*args):
         """ subtract number from result"""
-        subtraction = Subtraction(args)
+        subtraction = Subtraction(Calculator.convert_args_to_list_float(args))
         Calculator.history.append(subtraction)
         return subtraction.getResult()
     @staticmethod
     def multiply_numbers(*args):
         """ multiplication number from result"""
-        multiplication = Multiplication(args)
+        multiplication = Multiplication(Calculator.convert_args_to_list_float(args))
         return multiplication.getResult()
