@@ -18,4 +18,3 @@ class Calculator:
     def multiply_numbers(tuple_values: tuple):
         """ multiplication number from result"""
         return Calculations.add_multiplication_calculation(tuple_values)
-

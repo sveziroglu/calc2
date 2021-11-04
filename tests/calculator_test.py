@@ -28,4 +28,3 @@ def test_calculator_multiply_static(clear_history_fixture):
     #using Tuple instead of args because we can pack as much data as we need into the tuple
     my_tuple = (1.0,2.0,3.0)
     assert Calculator.multiply_numbers(my_tuple) == 6.0
-
