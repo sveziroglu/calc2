@@ -12,19 +12,7 @@ class Calculator:
         addition = Addition(args)
         Calculator.history.append(addition)
         return addition.get_result()
-    @staticmethod
-    def clear_history():
-        """ Clear the calculation history"""
-        Calculator.history.clear()
-        return True
-    @staticmethod
-    def get_calculation(num):
-        """ get a specific calculation from history"""
-        return Calculator.history[num]
-    @staticmethod
-    def get_calculation_last():
-        """ get last calculation from history"""
-        return Calculator.history[-1]
+
     @staticmethod
     def subtract_numbers(*args):
         """ subtract a list of numbers from result"""
