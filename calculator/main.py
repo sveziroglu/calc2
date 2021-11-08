@@ -24,4 +24,3 @@ class Calculator:
         """ Divide two numbers and store the result"""
         self.result = div_1 / div_2
         return self.result
-
