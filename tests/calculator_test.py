@@ -39,9 +39,9 @@ def test_get_last_calculation_result(clear_history):
     assert Calculator.get_result_of_last_calculation_added_to_history() == 5
 
 def test_get_first_calculation_result(clear_history):
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
-    assert Calculator.get_result_of_first_calculation_added_to_history() == 4
+    assert Calculator.add_number(6, 2) == 8
+    assert Calculator.add_number(5, 2) == 7
+    assert Calculator.get_result_of_first_calculation_added_to_history() == 8
 
 def test_calculator_subtract(clear_history):
     assert Calculator.subtract_number(1, 2) == -1
