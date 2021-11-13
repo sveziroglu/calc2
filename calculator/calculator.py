@@ -2,6 +2,8 @@ from calc.addition import Addition
 from calc.division import Division
 from calc.subtraction import Subtraction
 from calc.multiplication import Multiplication
+from calc.division import Division
+
 class Calculator:
     history = []
     @staticmethod
