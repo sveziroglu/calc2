@@ -1,4 +1,5 @@
 from calc.addition import Addition
+from calc.division import Division
 from calc.subtraction import Subtraction
 from calc.multiplication import Multiplication
 class Calculator:
@@ -34,3 +35,9 @@ class Calculator:
     def multiply_numbers(value_a, value_b):
         Calculator.add_calculation_to_history(Multiplication.create(value_a,value_b))
         return Calculator.get_result_of_last_calculation_added_to_history()
+    def divide_numbers(value_a, value_b):
+        division = Division.create(value_a, value_b)
+        Calculator.add_calculation_to_history(division)
+        return Calculator.get_result_of_last_calculation_added_to_history()
+
+

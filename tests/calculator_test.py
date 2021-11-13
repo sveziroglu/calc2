@@ -10,7 +10,6 @@ def clear_history():
     Calculator.clear_history()
 
 def test_calculator_add(clear_history):
-    """Testing the Add function of the calculator"""
     assert Calculator.add_number(1,2) == 3
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
@@ -45,11 +44,10 @@ def test_get_first_calculation_result(clear_history):
     assert Calculator.get_result_of_first_calculation_added_to_history() == 4
 
 def test_calculator_subtract(clear_history):
-    """Testing the subtract method of the calculator"""
     assert Calculator.subtract_number(1, 2) == -1
 
 def test_calculator_multiply(clear_history):
-    """ tests multiplication of two numbers"""
     assert Calculator.multiply_numbers(1,2) == 2
 
-
+def test_calculator_division(clear_history):
+    assert Calculator.divide_numbers(6,3) == 2
