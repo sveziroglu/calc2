@@ -32,7 +32,8 @@ class Calculator:
         return Calculator.history[-1].get_result()
     @staticmethod
     def get_last_calculation_object_added_to_history():
-        """"""
+        """gets last calculation object"""
+        return Calculator.history[-1]
     @staticmethod
     def clear_history():
         """Clears history"""
@@ -49,7 +50,6 @@ class Calculator:
         addition = Addition.create(value_a,value_b)
         Calculator.add_calculation_to_history(addition)
         return Calculator.get_result_of_last_calculation_added_to_history()
-
     @staticmethod
     def subtract_number(value_a, value_b):
         """subtract number"""
