@@ -31,10 +31,6 @@ class Calculator:
         """pulls most recent calculation"""
         return Calculator.history[-1].get_result()
     @staticmethod
-    def get_last_calculation_object_added_to_history():
-        """gets last calculation object"""
-        return Calculator.history[-1]
-    @staticmethod
     def clear_history():
         """Clears history"""
         Calculator.history.clear()
@@ -56,17 +52,14 @@ class Calculator:
         subtraction = Subtraction.create(value_a, value_b)
         Calculator.add_calculation_to_history(subtraction)
         return Calculator.get_result_of_last_calculation_added_to_history()
-
     @staticmethod
     def multiply_numbers(value_a, value_b):
         """multiply numbers"""
         Calculator.add_calculation_to_history(Multiplication.create(value_a,value_b))
         return Calculator.get_result_of_last_calculation_added_to_history()
-
     @staticmethod
     def divide_numbers(value_a, value_b):
         """divide numbers"""
-        #createdivisionobject
         division = Division.create(value_a, value_b)
         Calculator.add_calculation_to_history(division)
         return Calculator.get_result_of_last_calculation_added_to_history()
