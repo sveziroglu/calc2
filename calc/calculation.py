@@ -1,5 +1,6 @@
 """This is our calculation base class / Abstract Class"""
-class Calculation: # pylint: disable=too-few-public-methods
+class Calculation:
+    # pylint: disable=too-few-public-methods
 
     """contstructor - first function called when an object of the class is instantiated"""
     def __init__(self,value_a, value_b):
