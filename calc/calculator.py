@@ -26,3 +26,9 @@ class Calculator:
         """ multiplication number from result"""
         Calculations.add_multiplication_calculation(tuple_values)
         return True
+
+    @classmethod
+    def divide_numbers(cls, tuple_values: tuple):
+        """divide numbers"""
+        Calculations.add_division_calculation(tuple_values)
+        return True

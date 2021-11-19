@@ -5,9 +5,10 @@ from calc.calculations.addition import Addition
 
 @pytest.fixture
 def clear_history_fixture():
-    """define a function that will run each time you pass it to a test, it is called a fixture"""
+    """define a function that will run each time you pass it to a test: fixture"""
     # pylint: disable=redefined-outer-name
     Calculations.clear_history()
+
 @pytest.fixture
 def setup_addition_calculation_fixture():
     """define a function that will run each time you pass it to a test, it is called a fixture"""
@@ -43,12 +44,13 @@ def test_get_calculation_first(clear_history_fixture, setup_addition_calculation
     """Testing getting the last calculation from the history"""
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculations.get_first_calculation().get_result() == 3
+
 def test_history_count(clear_history_fixture, setup_addition_calculation_fixture):
     """Testing getting the count of calculations from the history"""
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculations.count_history() == 1
+
 def test_get_calc_last_result_object(clear_history_fixture, setup_addition_calculation_fixture):
     """Testing getting the last calculation from the history"""
     # pylint: disable=unused-argument,redefined-outer-name
-    #This test if it returns the last calculation as an object
     assert isinstance(Calculations.get_last_calculation_object(), Addition)
