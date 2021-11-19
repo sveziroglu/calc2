@@ -1,7 +1,9 @@
-"""Calculation history Class"""
+"""This is the calculator"""
 from calc.calculations.addition import Addition
 from calc.calculations.subtraction import Subtraction
 from calc.calculations.multiplication import Multiplication
+from calc.calculations.division import Division
+
 class Calculations:
     """Calculations class manages the history of calculations"""
     history = []
@@ -13,24 +15,24 @@ class Calculations:
         return True
     @staticmethod
     def count_history():
-        """get number of items in history"""
+        """pulls number of items in history"""
         return len(Calculations.history)
     @staticmethod
     def get_last_calculation_object():
-        """get last calculation"""
+        """pulls last calculation"""
         return Calculations.history[-1]
     @staticmethod
     def get_last_calculation_result_value():
-        """get last calculation"""
+        """pulls last calculation"""
         calculation = Calculations.get_last_calculation_object()
         return calculation.get_result()
     @staticmethod
     def get_first_calculation():
-        """get first calculation"""
+        """pulls first calculation"""
         return Calculations.history[0]
     @staticmethod
     def get_calculation(num):
-        """ get a specific calculation from history"""
+        """ pulls a specific calculation from history"""
         return Calculations.history[num]
     @staticmethod
     def add_calculation(calculation):
@@ -51,4 +53,9 @@ class Calculations:
     def add_multiplication_calculation(values):
         """Add a multiplication object to history using factory method create"""
         Calculations.add_calculation(Multiplication.create(values))
+        return True
+    @staticmethod
+    def add_division_calculation(values):
+        """creates a division object to history using factory method create"""
+        Calculations.add_calculation(Division.create(values))
         return True
