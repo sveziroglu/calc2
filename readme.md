@@ -1,5 +1,5 @@
 # Calculator Project Setup
-![image](https://user-images.githubusercontent.com/90662018/142567361-59950ddb-e316-4487-b0eb-e5435161bcd5.png)
+![image](https://user-images.githubusercontent.com/90662018/142713157-f139160d-8633-45d3-bf4d-107641b113c2.png)
 
 To run tests, Lint, and Coverage report use this command:
 
