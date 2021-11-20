@@ -1,5 +1,5 @@
 # Calculator Project Setup
-![image](https://user-images.githubusercontent.com/90662018/142713010-4c95a145-5fd9-40d0-9fbc-7a7c534146ab.png)
+![image](https://user-images.githubusercontent.com/90662018/142713128-f968d45c-2897-46b9-bddd-fa00c3cc3d57.png)
 Run Pip Install
 pip install -r requirements.txt
 
