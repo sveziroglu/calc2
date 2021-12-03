@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.9"
+  - "3.6"
 install:
   - pip install -r requirements.txt
 # command to run tests
@@ -9,4 +9,5 @@ script:
 
 branches:
   only:
-    - calc_refactor_4
+    - main
+    - Calc_with_Pandas
