@@ -3,6 +3,8 @@ from calc.addition import Addition
 from calc.subtraction import Subtraction
 from calc.multiplication import Multiplication
 from calc.division import Division
+import pandas as pd
+
 #This is how the calculator will solve
 class Calculator:
     """This is a calculator class"""

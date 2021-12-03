@@ -1,9 +1,11 @@
-FROM python:3.6-alpine
-RUN /usr/local/bin/python -m pip install --upgrade pip
+FROM python:3.8-alpine
+RUN apk update && apk add bash
 RUN adduser -D myuser
-RUN apk add --no-cache gcc musl-dev linux-headers
+RUN apk update && apk add python3-dev gcc g++ libc-dev musl-dev linux-headers
 USER myuser
 WORKDIR /home/myuser
 ENV PATH="/home/myuser/.local/bin:${PATH}"
 COPY --chown=myuser:myuser . .
 RUN pip install -r requirements.txt
+
+
