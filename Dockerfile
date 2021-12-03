@@ -6,4 +6,3 @@ WORKDIR /home/myuser
 ENV PATH="/home/myuser/.local/bin:${PATH}"
 COPY --chown=myuser:myuser . .
 RUN pip install --upgrade pip setuptools wheel
-
