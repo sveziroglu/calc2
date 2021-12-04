@@ -1,7 +1,6 @@
-FROM python:3.8-alpine
-RUN apk update && apk add bash
-RUN adduser -D myuser
-RUN apk update && apk add python3-dev gcc g++ libc-dev musl-dev linux-headers
+FROM python:3.8-buster
+RUN apt-get update
+RUN adduser myuser
 USER myuser
 WORKDIR /home/myuser
 ENV PATH="/home/myuser/.local/bin:${PATH}"

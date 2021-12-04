@@ -6,6 +6,7 @@ class Division(Calculation):
 
     def get_result(self):
         """This gives the quotient"""
-        quotient = self.values[1]
-        quotient = quotient/values
-        return quotient
+        quotient = self.values[0]
+        divisor = self.values[1]
+        final = quotient/divisor
+        return final

@@ -1,4 +1,5 @@
 """ This is the increment function"""
+from calc.calculations.division import Division
 from calc.history.calculations import Calculations
 
 class Calculator:
@@ -22,4 +23,9 @@ class Calculator:
     def multiply_numbers(tuple_values: tuple):
         """ multiplication number from result"""
         Calculations.add_multiplication_calculation(tuple_values)
+        return True
+    @staticmethod
+    def divide_numbers(tuple_values: tuple):
+        """divides numbers"""
+        Calculations.add_division_calculation(tuple)
         return True

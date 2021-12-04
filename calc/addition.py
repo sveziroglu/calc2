@@ -6,4 +6,4 @@ class Addition(Calculation):
      calculation A and B come from the parent class"""
     def get_result(self):
         """This will show result"""
-        return self.value_a + self.value_b
+        return sum(self.values)

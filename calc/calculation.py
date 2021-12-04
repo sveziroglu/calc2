@@ -1,16 +1,31 @@
 """This is our calculation base class / Abstract Class"""
+from abc import abstractmethod
 class Calculation:
-    # pylint: disable=too-few-public-methods
+    """ calculation abstract base class"""
+    # pylint: disable=too-few-public-methodss
+    def __init__(self, values: tuple):
+        """ constructor method"""
+        self.values = Calculation.convert_args_to_tuple_of_float(values)
 
-    """contstructor - first function called when an object of the class is instantiated"""
-    def __init__(self,value_a, value_b):
-        #self references the instantiated object of the class
-        #instance properties- shared with the child classes
-        self.value_a = value_a
-        """this self reference is for value_b"""
-        self.value_b = value_b
-    #Class Factory Method - bound to the class and not the instance of the class
     @classmethod
-    def create(cls, value_a, value_b):
-        """this is the result"""
-        return cls(value_a,value_b)
+    def create(cls, values: tuple):
+        """ factory method"""
+        return cls(values)
+
+    @staticmethod
+    def convert_args_to_tuple_of_float(values):
+        """ standardize values to list of floats"""
+        # lists can be modified and tuple cannot, tuple are faster.
+        # We need to convert the tuple of potentially random data types (its raw data)
+        # into a standard data format to keep things consistent so we convert it to float
+        # then i make it a tuple again because i actually won't need to change the calculation values
+        # I can also use it as a list and then i would be able to edit the calculation
+        list_values_float = []
+        for item in values:
+            list_values_float.append(float(item))
+        return tuple(list_values_float)
+
+    @abstractmethod
+    def get_result(self):
+        """creating this class to show overriding polymorphism"""
+        return True
