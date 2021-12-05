@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import time
+import glob
+import pathlib
+
 
 
 from calculator.calculator import *
@@ -56,10 +59,8 @@ print(" ---------------Completed Computing Subtraction CSV------------")
 
 print("---------------Computing Multiplication CSV------------")
 for index, row in df_mulitplication.iterrows():
-    value_a = row.value1
-    value_b = row.value2
-    Result = mainCalculator.multiply_numbers(value_a,value_b)
-    values = [recordNum,time.time(), "multiplication.csv", Result]
+    addResult = mainCalculator.multiply_numbers(row['value_a'], row['value_b'])
+    values = [recordNum,time.time(), "multiplication.csv", addResult]
     recordNum += 1
     zipped = zip(columns, values)
     a_dictionary = dict(zipped)
@@ -86,6 +87,8 @@ print(data)
 
 print(" ---------------Completed Computing Division CSV------------")
 
+
+#exception for division
 for index, row in df_division.iterrows():
     value_a = row.value_a
     value_b = row.value_b
@@ -108,10 +111,8 @@ for index, row in df_division.iterrows():
     data.append(a_dictionary)
 
 
-
-
-
 df_excep_logs = df_excep_logs.append(log_data,True)
 df_logs = df_logs.append(data,True)
 print(df_logs)
 df_logs.to_csv('../tests/log_files/log.csv')
+
