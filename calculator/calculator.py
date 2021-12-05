@@ -41,10 +41,11 @@ class Calculator:
     def history_count():
         """Counts how much history"""
         return len(Calculator.history)
-    @staticmethod
-    def add_number(value_a, value_b):
+    # @staticmethod
+    def add_number(self,value_a, value_b):
         """Adds number"""
-        addition = Addition.create(value_a,value_b)
+        values = (value_a,value_b)
+        addition = Addition.create(values)
         Calculator.add_calculation_to_history(addition)
         return Calculator.get_result_of_last_calculation_added_to_history()
     @staticmethod
