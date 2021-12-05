@@ -44,14 +44,15 @@ class Calculator:
     # @staticmethod
     def add_number(self,value_a, value_b):
         """Adds number"""
-        values = (value_a,value_b)
+        values = (value_a, value_b)
         addition = Addition.create(values)
         Calculator.add_calculation_to_history(addition)
         return Calculator.get_result_of_last_calculation_added_to_history()
     @staticmethod
     def subtract_number(value_a, value_b):
         """subtract number"""
-        subtraction = Subtraction.create(value_a, value_b)
+        values = (value_a, value_b)
+        subtraction = Subtraction.create(values)
         Calculator.add_calculation_to_history(subtraction)
         return Calculator.get_result_of_last_calculation_added_to_history()
     @staticmethod
