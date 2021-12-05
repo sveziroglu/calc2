@@ -1,8 +1,12 @@
-"""This is the division"""
-from calc.calculation import Calculation
-#This class is for dividing value_a and value_b
+"""This is the division class"""
+from calc.calculations.calculation import Calculation
+
 class Division(Calculation):
-    """this will get the quotient"""
+    """This is division"""
+
     def get_result(self):
-        """this will get the quotient"""
-        return self.value_a / self.value_b
+        """This gives the quotient"""
+        quotient = self.values[0]
+        divisor = self.values[1]
+        final = quotient/divisor
+        return final

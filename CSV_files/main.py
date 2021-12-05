@@ -50,6 +50,42 @@ for index, row in df_subtraction.iterrows():
     print(a_dictionary)
     data.append(a_dictionary)
 
+print(data)
+
+print(" ---------------Completed Computing Subtraction CSV------------")
+
+print("---------------Computing Multiplication CSV------------")
+for index, row in df_mulitplication.iterrows():
+    value_a = row.value1
+    value_b = row.value2
+    Result = mainCalculator.multiply_numbers(value_a,value_b)
+    values = [recordNum,time.time(), "multiplication.csv", Result]
+    recordNum += 1
+    zipped = zip(columns, values)
+    a_dictionary = dict(zipped)
+    print(a_dictionary)
+    data.append(a_dictionary)
+
+print(data)
+
+print(" ---------------Completed Computing Multiplication CSV------------")
+
+print("---------------Computing Division CSV------------")
+for index, row in df_division.iterrows():
+    value_a = row.value1
+    value_b = row.value2
+    Result = mainCalculator.divide_numbers(value_a,value_b)
+    values = [recordNum,time.time(), "division.csv", Result]
+    recordNum += 1
+    zipped = zip(columns, values)
+    a_dictionary = dict(zipped)
+    print(a_dictionary)
+    data.append(a_dictionary)
+
+print(data)
+
+print(" ---------------Completed Computing Division CSV------------")
+
 for index, row in df_division.iterrows():
     value_a = row.value_a
     value_b = row.value_b

@@ -1,8 +1,11 @@
-"""This is multiplication"""
-from calc.calculation import Calculation
-#This will multiply value_a and value_b
+"""Multiplication Class"""
+from calc.calculations.calculation import Calculation
+
 class Multiplication(Calculation):
-    """This will be the product"""
+    """subtraction calculation object"""
     def get_result(self):
-        """this will get the product"""
-        return self.value_a * self.value_b
+        """get the multiplication results"""
+        result = 1.0
+        for value in self.values:
+            result = result * value
+        return result

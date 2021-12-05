@@ -1,10 +1,15 @@
-"""This subtracts from value a and value b"""
+"""Subtraction Class"""
+import pprint
 
-from calc.calculation import Calculation
+from calc.calculations.calculation import Calculation
 
-#This uses calculation from parent folder
 class Subtraction(Calculation):
-    """This will result in the difference"""
+    """subtraction calculation object"""
     def get_result(self):
-        """This will result in the difference"""
-        return self.value_a - self.value_b
+        """get the subtraction results"""
+        difference_of_values = 0.0
+        for value in self.values:
+            difference_of_values =   difference_of_values - value
+            pprint.pprint(value)
+        return difference_of_values
+
