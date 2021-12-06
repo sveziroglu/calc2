@@ -1,7 +1,7 @@
 """Testing the Calculator"""
 import pytest
 from calc.history.calculations import Calculations
-from calc.temp.addition import Addition
+from calc.addition import Addition
 
 @pytest.fixture
 def clear_history_fixture():
@@ -12,8 +12,7 @@ def clear_history_fixture():
 def setup_addition_calculation_fixture():
     """define a function that will run each time you pass it to a test, it is called a fixture"""
     # pylint: disable=redefined-outer-name
-    values = (1, 2)
-    addition = Addition(values)
+    addition = Addition(1, 2)
     Calculations.add_calculation(addition)
 
 def test_add_calculation_to_history(clear_history_fixture, setup_addition_calculation_fixture):

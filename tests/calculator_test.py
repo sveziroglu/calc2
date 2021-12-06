@@ -3,10 +3,11 @@ import pytest
 import pandas as pd
 
 from calc.history.calculations import Calculations
-from calc.temp.division import Division
-from calc.temp.addition import Addition
-from calc.temp.multiplication import Multiplication
+from calc.division import Division
+from calc.addition import Addition
+from calc.multiplication import Multiplication
 from calc.subtraction import Subtraction
+from fileutilities.absolutepath import absolutepath
 
 @pytest.fixture
 def clear_history_fixture():
@@ -15,34 +16,30 @@ def clear_history_fixture():
     Calculations.clear_history()
 #You have to add the fixture function as a parameter to the test that you want to use it with
 def test_calculator_add_static(clear_history_fixture):
-    csv_reader = pd.read_csv("files/addition.csv")
+    csv_reader = pd.read_csv(absolutepath("tests/files/addition.csv"))
     for index, row in csv_reader.iterrows():
-        values = (row.value1, row.value2)
-        addition = Addition.create(values)
+        addition = Addition.create(row.value1, row.value2)
         addition_result = csv_reader["result"][index]
         assert addition.get_result() == addition_result
 
 def test_calculator_subtract_static(clear_history_fixture):
-    csv_reader = pd.read_csv("files/subtraction.csv")
+    csv_reader = pd.read_csv(absolutepath("tests/files/subtraction.csv"))
     for index, row in csv_reader.iterrows():
-        values = (row.value_a, row.value_b)
-        subtraction = Subtraction.create(values)
+        subtraction = Subtraction.create(row.value_a, row.value_b)
         subtraction_result = csv_reader["result"][index]
         assert subtraction.get_result() == subtraction_result
 
 def test_calculator_multiply_static(clear_history_fixture):
-    csv_reader = pd.read_csv("files/multiplication.csv")
+    csv_reader = pd.read_csv(absolutepath("tests/files/multiplication.csv"))
     for index, row in csv_reader.iterrows():
-        values = (row.value_a, row.value_b)
-        multiplication = Multiplication.create(values)
+        multiplication = Multiplication.create(row.value_a, row.value_b)
         multiplication_result = csv_reader["result"][index]
         assert multiplication.get_result() == multiplication_result
 
-def test_calculator_divide_static(clear_history_fixture, self=None):
-    csv_reader = pd.read_csv("files/division.csv")
+def test_calculator_divide_static(clear_history_fixture):
+    csv_reader = pd.read_csv(absolutepath("tests/files/division.csv"))
     for index, row in csv_reader.iterrows():
-        values = (row.value3, row.value4)
-        division_result = Division.create(values)
-        addition_result = csv_reader["result"][index]
-        assert Division.get_result(self) == division_result
+        division = Division.create(row.value3, row.value4)
+        division_result = csv_reader["result"][index]
+        assert division.get_result() == division_result
 
