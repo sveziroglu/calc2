@@ -2,12 +2,10 @@
 import pytest
 import pandas as pd
 
-from calc.calculator import Calculator
-from calc.calculations.calculation import Calculation
 from calc.history.calculations import Calculations
-from calc.calculations.division import Division
-from calc.calculations.addition import Addition
-from calc.calculations.multiplication import Multiplication
+from calc.temp.division import Division
+from calc.temp.addition import Addition
+from calc.temp.multiplication import Multiplication
 from calc.subtraction import Subtraction
 
 @pytest.fixture

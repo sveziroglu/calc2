@@ -1,8 +1,8 @@
 """This is the calculator"""
-from calc.calculations.addition import Addition
-from calc.calculations.subtraction import Subtraction
-from calc.calculations.multiplication import Multiplication
-from calc.calculations.division import Division
+from calc.temp.addition import Addition
+from calc.temp.subtraction import Subtraction
+from calc.temp.multiplication import Multiplication
+from calc.temp.division import Division
 
 class Calculations:
     """Calculations class manages the history of calculations"""
