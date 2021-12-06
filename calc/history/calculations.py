@@ -59,3 +59,4 @@ class Calculations:
         """creates a division object to history using factory method create"""
         Calculations.add_calculation(Division.create(values))
         return True
+
